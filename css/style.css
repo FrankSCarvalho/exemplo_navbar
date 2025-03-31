@@ -1,88 +1,99 @@
-/*Reset Estilo básicos */
+/* Reset básico para remover margens e paddings padrão dos navegadores */
 *{
     margin: 0;
     padding: 0;
+    /* Faz com que padding e border não afetem a largura/altura total */
     box-sizing: border-box;
+    /* Define a fonte padrão */
     font-family: Arial, Helvetica, sans-serif;
 }
 
-/*Estilos da Navbar*/
+/* Estilos para a navbar principal */
 .navbar{
-    background-color: #333;
-    height: 80px;
+    background-color: #333; /* Cor de fundo escura */
+    height: 80px; /* Altura fixa */
+    /* Flexbox para centralizar conteúdo */
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.2rem;
-    position: sticky;
-    top: 0;
-    z-index: 999;
+    font-size: 1.2rem; /* Tamanho da fonte */
+    position: sticky; /* Fixa a navbar no topo ao rolar */
+    top: 0; /* Fixa no topo da viewport */
+    z-index: 999; /* Garante que fique acima de outros elementos */
 }
 
+/* Container interno para organizar os elementos */
 .navbar-container{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Espaço entre logo e menu */
     height: 80px;
     width: 100%;
-    max-width: 1200px;
-    padding: 0 20px;
+    max-width: 1200px; /* Largura máxima do conteúdo */
+    padding: 0 20px; /* Padding nas laterais */
 }
 
+/* Estilos para o logo */
 .navbar-logo{
-    color: #fff;
-    justify-self: start;
-    cursor: pointer;
-    text-decoration: none;
-    font-size: 2rem;
+    color: #fff; /* Cor branca */
+    justify-self: start; /* Alinha à esquerda */
+    cursor: pointer; /* Muda cursor para pointer */
+    text-decoration: none; /* Remove sublinhado */
+    font-size: 2rem; /* Tamanho maior para o logo */
     display: flex;
-    align-items: center;
+    align-items: center; /* Centraliza verticalmente */
 }
 
+/* Estilos para a lista de menu */
 .navbar-menu{
     display: flex;
     align-items: center;
-    list-style: none;
+    list-style: none; /* Remove marcadores de lista */
     text-align: center;
 }
 
+/* Estilos para cada item do menu */
 .navbar-item{
-    height: 80px;
+    height: 80px; /* Altura igual à navbar */
 }
 
+/* Estilos para os links do menu */
 .navbar-links{
     color: #fff;
     display: flex;
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    padding: 0 1rem;
-    height: 100%;
-    transition: all 0.3s ease;
+    padding: 0 1rem; /* Espaçamento horizontal */
+    height: 100%; /* Ocupa toda a altura do item */
+    transition: all 0.3s ease; /* Transição suave para hover */
 }
 
+/* Efeito hover nos links */
 .navbar-links:hover{
-    color: #f0f0f0;
-    background-color: #555;
+    color: #f0f0f0; /* Cor mais clara */
+    background-color: #555; /* Fundo mais claro */
 }
 
-/* Estilos para o menu mobile */
+/* Estilos para o botão de menu mobile (inicialmente escondido) */
 .navbar-toggle{
-    display: none;
-    cursor: pointer;
+    display: none; /* Escondido por padrão (visível apenas em mobile) */
+    cursor: pointer; /* Indica que é clicável */
 }
 
+/* Estilos para as barras do ícone hamburger */
 .bar{
     display: block;
     width: 25px;
     height: 3px;
     margin: 5px auto;
-    -webkit-transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out;
-    background-color: #fff;
+    -webkit-transition: all 0.3s ease-in-out; 
+    transition: all 0.3s ease-in-out; /* Transição suave */
+    background-color: #fff; /* Cor branca */
 }
 
-/* Media queries para responsividade */
+/* Media query para telas menores que 768px (tablets e celulares) */
 @media screen and (max-width:768px) {
+    /* Mostra o botão de toggle em mobile */
     .navbar-toggle{
         display: block;
         position: absolute;
@@ -90,28 +101,32 @@
         right: 25px;
     }
 
+     /* Estilos para o menu em mobile */
     .navbar-menu{
         position: fixed;
-        left: -100%;
-        top:80px;
-        flex-direction: column;
-        background-color: #333;
-        width: 100%;
-        height: calc(100vh - 80px);
-        transition: all 0.5s ease;
+        left: -100%; /* Esconde o menu fora da tela */
+        top:80px; /* Abaixo da navbar */
+        flex-direction: column; /* Itens em coluna */
+        background-color: #333; /* Mesma cor da navbar */
+        width: 100%; /* Largura total */
+        height: calc(100vh - 80px); /* Altura da viewport menos navbar */
+        transition: all 0.5s ease; /* Animação de deslize */
     }
 
+    /* Classe ativa que mostra o menu */
     .navbar-menu.active{
-        left: 0;
+        left: 0; /* Traz o menu para a viewport */
     }
 
+    /* Ajustes para os itens em mobile */
     .navbar-item{
-        width: 100%;
+        width: 100%; /* Largura total */
     }
 
+    /* Ajustes para os links em mobile */
     .navbar-links{
-        padding: 2rem;
+        padding: 2rem; /* Espaçamento maior */
         width: 100%;
-        display: table;
+        display: table; /* Melhor alinhamento */
     }
 }
