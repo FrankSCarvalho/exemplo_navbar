@@ -59,3 +59,59 @@
     height: 100%;
     transition: all 0.3s ease;
 }
+
+.navbar-links:hover{
+    color: #f0f0f0;
+    background-color: #555;
+}
+
+/* Estilos para o menu mobile */
+.navbar-toggle{
+    display: none;
+    cursor: pointer;
+}
+
+.bar{
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: #fff;
+}
+
+/* Media queries para responsividade */
+@media screen and (max-width:768px) {
+    .navbar-toggle{
+        display: block;
+        position: absolute;
+        top: 25px;
+        right: 25px;
+    }
+
+    .navbar-menu{
+        position: fixed;
+        left: -100%;
+        top:80px;
+        flex-direction: column;
+        background-color: #333;
+        width: 100%;
+        height: calc(100vh - 80px);
+        transition: all 0.5s ease;
+    }
+
+    .navbar-menu.active{
+        left: 0;
+    }
+
+    .navbar-item{
+        width: 100%;
+    }
+
+    .navbar-links{
+        padding: 2rem;
+        width: 100%;
+        display: table;
+    }
+}
