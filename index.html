@@ -1,42 +1,92 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exemplo de Navbar</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-    <nav class="navbar">
-        <div class="navbar-container">
-            <a href="#" class="navbar-logo">Logo</a>
 
-            <div class="navbar-toggle" id="mobile-menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
+    <!--Placeholder para a navbar-->
+    <div id="navbar-container"></div>
 
-            <ul class="navbar-menu">
-                <li class="navbar-item">
-                    <a href="#" class="navbar-links">Home</a>
-                </li>
+    <main>
+        <h1>Bem vindo ao meu site!</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis explicabo asperiores laudantium aliquid
+            numquam earum cum doloribus, ipsa totam ratione distinctio cupiditate sed tempore ea impedit excepturi
+            tenetur, praesentium quasi. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptas ea voluptatem
+            recusandae, illo praesentium laudantium nulla dolores asperiores laborum quibusdam voluptatum explicabo odit
+            quis eius iusto placeat eligendi molestias similique? Lorem ipsum dolor sit amet consectetur adipisicing
+            elit. Facilis debitis, repellendus eligendi tenetur quo at exercitationem natus alias libero error.
+            Recusandae velit delectus commodi quaerat aliquid non aut. Cum, velit. Lorem ipsum, dolor sit amet
+            consectetur adipisicing elit. Fuga fugiat culpa officiis necessitatibus cum eius nam nisi repellendus
+            doloremque natus autem nesciunt soluta, quasi ducimus debitis rem vel ratione voluptatum! Lorem ipsum dolor
+            sit, amet consectetur adipisicing elit. Possimus quasi quidem aperiam fugiat, ipsum iure nostrum vel fugit
+            nesciunt sequi ab, velit labore distinctio. Ullam ipsum molestiae quo in non! Lorem, ipsum dolor sit amet
+            consectetur adipisicing elit. Eius eligendi nobis eveniet ea at dignissimos beatae culpa illo facilis
+            voluptatum, maiores, quae laborum, consequuntur incidunt quod. Vel vitae culpa mollitia.</p>
 
-                <li class="navbar-item">
-                    <a href="#" class="navbar-links">Sobre</a>
-                </li>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis explicabo asperiores laudantium aliquid
+            numquam earum cum doloribus, ipsa totam ratione distinctio cupiditate sed tempore ea impedit excepturi
+            tenetur, praesentium quasi. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptas ea voluptatem
+            recusandae, illo praesentium laudantium nulla dolores asperiores laborum quibusdam voluptatum explicabo odit
+            quis eius iusto placeat eligendi molestias similique? Lorem ipsum dolor sit amet consectetur adipisicing
+            elit. Facilis debitis, repellendus eligendi tenetur quo at exercitationem natus alias libero error.
+            Recusandae velit delectus commodi quaerat aliquid non aut. Cum, velit. Lorem ipsum, dolor sit amet
+            consectetur adipisicing elit. Fuga fugiat culpa officiis necessitatibus cum eius nam nisi repellendus
+            doloremque natus autem nesciunt soluta, quasi ducimus debitis rem vel ratione voluptatum! Lorem ipsum dolor
+            sit, amet consectetur adipisicing elit. Possimus quasi quidem aperiam fugiat, ipsum iure nostrum vel fugit
+            nesciunt sequi ab, velit labore distinctio. Ullam ipsum molestiae quo in non! Lorem, ipsum dolor sit amet
+            consectetur adipisicing elit. Eius eligendi nobis eveniet ea at dignissimos beatae culpa illo facilis
+            voluptatum, maiores, quae laborum, consequuntur incidunt quod. Vel vitae culpa mollitia.</p>
 
-                <li class="navbar-item">
-                    <a href="#" class="navbar-links">Serviços</a>
-                </li>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis explicabo asperiores laudantium aliquid
+            numquam earum cum doloribus, ipsa totam ratione distinctio cupiditate sed tempore ea impedit excepturi
+            tenetur, praesentium quasi. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptas ea voluptatem
+            recusandae, illo praesentium laudantium nulla dolores asperiores laborum quibusdam voluptatum explicabo odit
+            quis eius iusto placeat eligendi molestias similique? Lorem ipsum dolor sit amet consectetur adipisicing
+            elit. Facilis debitis, repellendus eligendi tenetur quo at exercitationem natus alias libero error.
+            Recusandae velit delectus commodi quaerat aliquid non aut. Cum, velit. Lorem ipsum, dolor sit amet
+            consectetur adipisicing elit. Fuga fugiat culpa officiis necessitatibus cum eius nam nisi repellendus
+            doloremque natus autem nesciunt soluta, quasi ducimus debitis rem vel ratione voluptatum! Lorem ipsum dolor
+            sit, amet consectetur adipisicing elit. Possimus quasi quidem aperiam fugiat, ipsum iure nostrum vel fugit
+            nesciunt sequi ab, velit labore distinctio. Ullam ipsum molestiae quo in non! Lorem, ipsum dolor sit amet
+            consectetur adipisicing elit. Eius eligendi nobis eveniet ea at dignissimos beatae culpa illo facilis
+            voluptatum, maiores, quae laborum, consequuntur incidunt quod. Vel vitae culpa mollitia.</p>
 
-                <li class="navbar-item">
-                    <a href="#" class="navbar-links">Contato</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+    </main>
+
+
+    <!--Script para Carregar a navbar-->
+    <script>
+        // Carrega a navbar quando o DOM estiver pronto
+        document.addEventListener('DOMContentLoaded', function () {
+            fetch('partials/navbar.html')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Falha ao carregar a navbar');
+                    }
+                    return response.text();
+                })
+                .then(data => {
+                    document.getElementById('navbar-container').innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('Erro:', error);
+                    document.getElementById('navbar-container').innerHTML =
+                        '<p>Erro ao carregar o menu de navegação</p>';
+                });
+        });
+
+        
+    </script>
 
     <script src="js/navbar.js"></script>
+    
+
 </body>
+
 </html>
