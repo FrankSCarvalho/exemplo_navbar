@@ -59,33 +59,8 @@
 
     </main>
 
-
-    <!--Script para Carregar a navbar-->
-    <script>
-        // Carrega a navbar quando o DOM estiver pronto
-        document.addEventListener('DOMContentLoaded', function () {
-            fetch('partials/navbar.html')
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Falha ao carregar a navbar');
-                    }
-                    return response.text();
-                })
-                .then(data => {
-                    document.getElementById('navbar-container').innerHTML = data;
-                })
-                .catch(error => {
-                    console.error('Erro:', error);
-                    document.getElementById('navbar-container').innerHTML =
-                        '<p>Erro ao carregar o menu de navegação</p>';
-                });
-        });
-
-        
-    </script>
-
+    <!--Script para Carregar a navbar e executar a funcionalidade da navbar-->
     <script src="js/navbar.js"></script>
-    
 
 </body>
 
